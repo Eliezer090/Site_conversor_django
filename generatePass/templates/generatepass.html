@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+
+{% endblock  %}
+{% block 'body' %}
+<div class="container"> 
+    <div class="">
+        <form method="POST">{% csrf_token %}
+            <h1>Gerador de senha</h1>
+            
+            <div class="form-group">
+                <label for="customRange2" class="form-label">Tamanho da senha</label>
+                <input name="tamanho_senha" type="range" class="form-range slider" min="1" max="20" value={{tamanho_senha}} id="myRange">
+                <p>Tamanho: <span id="demo"></span></p>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Incluir na senha</label>
+                <input name="incluir" type="text" class="form-control" placeholder="Incluir caracteres na senha" value={{incluir}}>
+                <small class="form-text text-muted">Informe o texto a ser incluído na senha</small>
+            </div>
+                <div class="form-group">
+                <label for="">Senha</label>
+                <input name="Senha" type="text" class="form-control" id="retorno" placeholder="Senha" value="{{retorno}}">
+            </div>
+              
+            <button type="submit" class="btn btn-primary">Gerar Senha</button>
+        </form>
+        
+    </div>
+</div>
+<script src="{% static 'genpass/js/genpass.js' %}"></script>
+<!--
+<div class="form-group">
+                <label for="exampleInputEmail1">Endereço de email</label>
+                <input name="email" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+              </div>
+              <div class="form-group form-check">
+                <input name="checkSenha" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Clique em mim</label>
+              </div>
+-->
+{% endblock %}

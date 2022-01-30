@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+<link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+
+{% endblock  %}
+{% block 'body' %}
+
+<div class="container"> 
+  <div class="">
+      <form method="POST">{% csrf_token %}
+          <h1>Seu site de conversor ou gerador!</h1>          
+          <div class="form-group">
+              <p style="color: black" class="form-label">Utilize o menu ao lado para acessar as opções!</p>
+              
+          </div>
+          
+      </form>
+      
+  </div>
+</div>
+
+{% endblock %}
