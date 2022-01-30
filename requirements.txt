@@ -1,3 +1,2 @@
 Django==2.2.4
 Pandas
-python_version==3.9
