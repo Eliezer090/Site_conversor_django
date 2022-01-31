@@ -5,12 +5,6 @@ name = "pypi"
 
 [packages]
 flask = "*"
-django = "*"
-python = "*"
-
-[dev-packages]
-mypy = "*"
 
 [requires]
 python_version = "3.9"
-
